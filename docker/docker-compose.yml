@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+
+  drupal:
+
+    build: .
+
+    container_name: drupal-app
+
+    ports:
+
+      - "8080:80"
+
+    depends_on:
+
+      - mysql
+
+    restart: always
+
+  mysql:
+
+    image: mysql:8.0
+
+    container_name: drupal-db
+
+    restart: always
+
+    environment:
+
+      MYSQL_DATABASE: drupal
+
+      MYSQL_USER: admin
+
+      MYSQL_PASSWORD: ChangeThisPassword123!
+
+      MYSQL_ROOT_PASSWORD: rootpassword
+
+    volumes:
+
+      - mysql_data:/var/lib/mysql
+
+volumes:
+
+  mysql_data:

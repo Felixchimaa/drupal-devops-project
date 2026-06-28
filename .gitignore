@@ -1,0 +1,25 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+terraform.tfvars
+
+# Terraform Lock
+.terraform.lock.hcl
+
+# Ansible
+*.retry
+
+# Docker
+*.log
+
+# Python
+__pycache__/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+
